@@ -24,4 +24,4 @@ dotchart(data$L.DW, col=data$SITE)
 plot(data$S.date, data$L.DW, col=data$SITE)
 identify(data$S.date, data$L.DW) #this is to know
 
-data_check <- data[c(253,254, 255, 256, 257, 510, 512),]
+data_check <- data[c(253,254,255,256,257,511,513),]
