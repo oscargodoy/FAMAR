@@ -27,7 +27,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>FAMAR/correlogram_step1.R at 773e00fe7df9525a7503eb824076ff9d2b20c2d8 · oscargodoy/FAMAR</title>
+  <title>FAMAR/glmm anlyses_step3.R at 773e00fe7df9525a7503eb824076ff9d2b20c2d8 · oscargodoy/FAMAR</title>
     <meta name="description" content="Contribute to oscargodoy/FAMAR development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -37,10 +37,10 @@
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/19736776?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="oscargodoy/FAMAR" /><meta property="og:url" content="https://github.com/oscargodoy/FAMAR" /><meta property="og:description" content="Contribute to oscargodoy/FAMAR development by creating an account on GitHub." />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzIzNzk1MjQzOjFmMTdhM2U1YzU0ZThiYTY1OTQ3MTJjZTE0YmEwMDI4YjczODQ2M2UxMDAyMGE5ODhhMGQ2MWE3N2VjMWJjYzM=--d95b5285fdf1fa033d764eba8ae93b683b5db279">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzIzNzk1MjQzOjZlZTYyNDlmNDU4MTIyNDFjODM0NzI0YjVjMTJlMTZlMWYyYWQ0MWJjOGY3NzNlZGI1MGZmNzcwNjAyNmRjMjU=--1b52d3a057e003a5f4290aa2d01e8354a0a7563e">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="CFA3:6166:6A7A2EF:BD7A652:5BBC934A" data-pjax-transient>
+  <meta name="request-id" content="CFA3:6166:6A7AE65:BD7B8D1:5BBC9360" data-pjax-transient>
 
 
   
@@ -51,7 +51,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="CFA3:6166:6A7A2EF:BD7A652:5BBC934A" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="19736776" /><meta name="octolytics-actor-login" content="oscargodoy" /><meta name="octolytics-actor-hash" content="6254a33a02b436f4f946f1ee880b93c3ed7319f54cf7178dfd053063f5f94c0d" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="CFA3:6166:6A7AE65:BD7B8D1:5BBC9360" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="19736776" /><meta name="octolytics-actor-login" content="oscargodoy" /><meta name="octolytics-actor-hash" content="6254a33a02b436f4f946f1ee880b93c3ed7319f54cf7178dfd053063f5f94c0d" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -70,7 +70,7 @@
     <meta name="user-login" content="oscargodoy">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="OWNhZjM4OTU1OWU3NjkxNDBjMmFkNTVjYzYyYjc1NDQyZTJmNjk3NmVhYjdmMDc1NDUxYmNlMWYzNjMwZTEzMHx7InJlbW90ZV9hZGRyZXNzIjoiMTUwLjIxNC4xNC4xMCIsInJlcXVlc3RfaWQiOiJDRkEzOjYxNjY6NkE3QTJFRjpCRDdBNjUyOjVCQkM5MzRBIiwidGltZXN0YW1wIjoxNTM5MDg1MTM0LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+    <meta name="js-proxy-site-detection-payload" content="MTU5ZWI2MGU2ZmVjNTI5NTcyMzRiNjMwMGU1MjY2ZDYyNTY3NzUxNDEwY2RmMGQzNjhiZTlmNDc4ODAxOWFkN3x7InJlbW90ZV9hZGRyZXNzIjoiMTUwLjIxNC4xNC4xMCIsInJlcXVlc3RfaWQiOiJDRkEzOjYxNjY6NkE3QUU2NTpCRDdCOEQxOjVCQkM5MzYwIiwidGltZXN0YW1wIjoxNTM5MDg1MTU5LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="DASHBOARD_V2_LAYOUT_OPT_IN,EXPLORE_DISCOVER_REPOSITORIES,UNIVERSE_BANNER,MARKETPLACE_PLAN_RESTRICTION_EDITOR,MARKETPLACE_RETARGETING,COLLAPSE_REPEATED_COMMENTS">
 
@@ -86,7 +86,7 @@
   <meta name="octolytics-dimension-user_id" content="19736776" /><meta name="octolytics-dimension-user_login" content="oscargodoy" /><meta name="octolytics-dimension-repository_id" content="152045567" /><meta name="octolytics-dimension-repository_nwo" content="oscargodoy/FAMAR" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="152045567" /><meta name="octolytics-dimension-repository_network_root_nwo" content="oscargodoy/FAMAR" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="true" />
 
 
-    <link rel="canonical" href="https://github.com/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/glmm%20anlyses_step3.R" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -155,7 +155,7 @@
           autocapitalize="off"
           aria-autocomplete="list"
           aria-controls="jump-to-results"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=Q9mTKtSJ24BSLgMhFpXkzZYQ7FEWeTYnPRbkmISUsjzSHYzgzCj5TEK5NKriFPNseXGw340vJkYH+cCLw5KTDQ=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=Czgh1mTF7vqyEIT3tK+bg4goGXbD7BVWlGU+w9zItKSa/D4cfGTMNqKHs3xALowiZ0lF+Fi6BTeuihrQm86VlQ=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -309,7 +309,7 @@
           <li><a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a></li>
           <li><a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a></li>
           <li>
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="G/9M6KGE9iJytBpHlxrSBGHmEMK85Et10G0KKp5/HpoYJYrW16JwGOJSK6X/iB5cEqF6mDcrRJuQ3WRxz0uWRg==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="b8sbKqFgu9HsvRw91erAFB5zO9g+BtATYVCToNsai85sEd0U10Y963xbLd+9eAxMbTRRgrXJ3/0h4P37ii4DEg==" />
               <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
                 Sign out
               </button>
@@ -322,7 +322,7 @@
 
 
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="EhVELlp80mge4Q4ZFyugbBbeWqxICv11zVWP8GcnAH8Rz4IQLFpUUo4HP/t/uWw0ZZkw9sPF8puN5eGrNhOIow==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="jXyFHUoOrAOMmTLUdfZOnZ+/AezqjiTISFW6trxI4AGOpkMjPCgqORx/AzYdZILF7PhrtmFBKyYI5dTt7Xxo3Q==" />
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -360,7 +360,7 @@
 
       <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="s9ZHdhDvqOqXZAke+4n4OBI7mZIbI32Ro4aIR2bBHVkbt+oPbMy2LPpGxq9IPQ75enHHWlPOus2BQt/JDOOadg==" />      <input type="hidden" name="repository_id" id="repository_id" value="152045567" class="form-control" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="GFf6kNX/S5b1cNZCa0zkbhumi3ZDZvMu99T9+uarJM+wNlfpqdxVUJhSGfPY+BKvc+zVvguLNHLVEKp0jImj4A==" />      <input type="hidden" name="repository_id" id="repository_id" value="152045567" class="form-control" />
 
       <details class="details-reset details-overlay select-menu float-left">
         <summary class="btn btn-sm btn-with-count select-menu-button" data-ga-click="Repository, click Watch settings, action:blob#show">
@@ -423,7 +423,7 @@
   <li>
     
   <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/oscargodoy/FAMAR/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/oAdg8+aVZeshh9EEUoNCHlVwJPPxOLgyaxt+oHytFczmC+2rPV4yH7ZBKPstpJMO6n+nCRVQ13YKDYz01podw==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/oscargodoy/FAMAR/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Ah7LphAZnZPK9VQC7Nue9YNm4wN7No4phxbTx+GmqHrPBvmTc3awzBiqT+URJwGxwZrdDJCnL5SWkogOsw50Wg==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
@@ -438,7 +438,7 @@
           0
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/oscargodoy/FAMAR/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="93fCuv3+AQS4KAAW+3D+hkIeH5EIZw2aJf5SDqioGpH5qbgXPzUrYjYSBFoOfkAthe5tbQQQ6W3DSuHkMONdPA==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/oscargodoy/FAMAR/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="cqPbNIK+Sq/TXarrMxUPonr3jA7SieO4C2TtaBYleTd8faGZQHVgyV1nrqfGG7EJvQf+8t7+B0/t0F6Cjm4+mg==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
@@ -537,9 +537,9 @@
     
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/glmm%20anlyses_step3.R">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:06553e8aee082bbe3428018c7ff47c43 -->
+    <!-- blob contrib key: blob_contributors:v21:02196456ec2c61bf63eb8f7378bf7f2c -->
 
     
 
@@ -583,7 +583,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/oscargodoy/FAMAR/blob/master/code/correlogram_step1.R"
+               href="/oscargodoy/FAMAR/blob/master/code/glmm%20anlyses_step3.R"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -594,10 +594,10 @@
             </a>
         </div>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="select-menu-new-item-form js-new-item-form" action="/oscargodoy/FAMAR/branches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="npHcoY1dXEL/6LLZUfSelHqJyxzd/ZVosdj7Qtoq+uNZsTYnDUpjDZRTgrI+DWbTAdTITeRPE5ZP3qYZ7dn8yA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="select-menu-new-item-form js-new-item-form" action="/oscargodoy/FAMAR/branches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="A6HFq2H63751nRtcMxC75n5sSugDNpldzYSjYqIiUiTEgS8t4e3g8R4mKzdc6UOhBTFJuTqEH6Mzgv45ldFUDw==" />
             <input type="hidden" name="name" id="name" class="js-new-item-value">
             <input type="hidden" name="branch" id="branch" value="773e00fe7df9525a7503eb824076ff9d2b20c2d8">
-            <input type="hidden" name="path" id="path" value="code/correlogram_step1.R">
+            <input type="hidden" name="path" id="path" value="code/glmm%20anlyses_step3.R">
 
             <button type="submit" class="width-full select-menu-item js-navigation-open js-navigation-item">
               <svg class="octicon octicon-git-branch select-menu-item-icon" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
@@ -634,7 +634,7 @@
         </clipboard-copy>
       </div>
       <div id="blob-path" class="breadcrumb">
-        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8"><span>FAMAR</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code"><span>code</span></a></span><span class="separator">/</span><strong class="final-path">correlogram_step1.R</strong>
+        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8"><span>FAMAR</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code"><span>code</span></a></span><span class="separator">/</span><strong class="final-path">glmm anlyses_step3.R</strong>
       </div>
     </div>
 
@@ -642,15 +642,15 @@
     
   <div class="commit-tease">
       <span class="float-right">
-        <a class="commit-tease-sha" href="/oscargodoy/FAMAR/commit/b17be496de1f069c1853aa31289240b371406a9d" data-pjax>
-          b17be49
+        <a class="commit-tease-sha" href="/oscargodoy/FAMAR/commit/773e00fe7df9525a7503eb824076ff9d2b20c2d8" data-pjax>
+          773e00f
         </a>
-        <relative-time datetime="2018-10-08T11:08:52Z">Oct 8, 2018</relative-time>
+        <relative-time datetime="2018-10-09T07:29:16Z">Oct 9, 2018</relative-time>
       </span>
       <div>
         <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=19736776" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/oscargodoy"><img class="avatar" src="https://avatars3.githubusercontent.com/u/19736776?s=40&amp;v=4" width="20" height="20" alt="@oscargodoy" /></a>
         <a class="user-mention" rel="author" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=19736776" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/oscargodoy">oscargodoy</a>
-          <a data-pjax="true" title="some changes and more code to the database" class="message" href="/oscargodoy/FAMAR/commit/b17be496de1f069c1853aa31289240b371406a9d">some changes and more code to the database</a>
+          <a data-pjax="true" title="some analyses and data" class="message" href="/oscargodoy/FAMAR/commit/773e00fe7df9525a7503eb824076ff9d2b20c2d8">some analyses and data</a>
       </div>
 
     <div class="commit-tease-contributors">
@@ -689,9 +689,9 @@
   <div class="file-actions">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/raw/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/commits/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/raw/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/glmm%20anlyses_step3.R">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/glmm%20anlyses_step3.R">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/commits/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/glmm%20anlyses_step3.R">History</a>
     </div>
 
         <button class="btn-octicon disabled tooltipped tooltipped-nw"
@@ -712,9 +712,9 @@
   </div>
 
   <div class="file-info">
-      68 lines (50 sloc)
+      33 lines (24 sloc)
       <span class="file-info-divider"></span>
-    1.92 KB
+    1.31 KB
   </div>
 </div>
 
@@ -724,77 +724,79 @@
       <table class="highlight tab-size js-file-line-container" data-tab-size="8">
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> first exploratory analyses FAMAR Oct 8th </span></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>load the data and start with the analyses</span></td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> do a correlogram</span></td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">reshape2</span>)</td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>load the database</span></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">nlme</span>)</td>
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span> <span class="pl-k">&lt;-</span> read.csv(<span class="pl-s"><span class="pl-pds">&quot;</span>data/famar-Biom_123_05_15c.csv<span class="pl-pds">&quot;</span></span>, <span class="pl-v">header</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">sep</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)</td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>we are going to limit the database to the natural growing years</span></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span> <span class="pl-k">&lt;-</span> read.csv(<span class="pl-s"><span class="pl-pds">&quot;</span>data/famar_clean.csv<span class="pl-pds">&quot;</span></span>, <span class="pl-v">header</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">sep</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">YEAR</span><span class="pl-k">&gt;</span><span class="pl-c1">2005</span>)</td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>We are going to establish a linear relationship between biomass</span></td>
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">YEAR</span><span class="pl-k">&lt;</span><span class="pl-c1">2015</span>)</td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>production and the predictors by doing a log of biomass</span></td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line">table(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">YEAR</span>)</td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">lCtr</span> <span class="pl-k">&lt;-</span> lmeControl(<span class="pl-v">maxIter</span> <span class="pl-k">=</span> <span class="pl-c1">500</span>, <span class="pl-v">msMaxIter</span> <span class="pl-k">=</span> <span class="pl-c1">500</span>, <span class="pl-v">tolerance</span> <span class="pl-k">=</span> <span class="pl-c1">1e-6</span>, <span class="pl-v">niterEM</span> <span class="pl-k">=</span> <span class="pl-c1">250</span>, <span class="pl-v">msMaxEval</span> <span class="pl-k">=</span> <span class="pl-c1">200</span>)</td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line">table(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>put the correct format</span></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>1.leaf dry weight (L.DW)----</span></td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span> <span class="pl-k">&lt;-</span> as.POSIXct(strptime(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-v">format</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>%d/%m/%Y<span class="pl-pds">&quot;</span></span>)) </td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">model_ldw1</span> <span class="pl-k">&lt;-</span> lme(log(<span class="pl-smi">L.DW</span>) <span class="pl-k">~</span> <span class="pl-smi">SITE</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data</span>, <span class="pl-v">random</span><span class="pl-k">=</span><span class="pl-k">~</span><span class="pl-c1">1</span><span class="pl-k">|</span><span class="pl-smi">REPLICATE</span>, <span class="pl-v">control</span><span class="pl-k">=</span><span class="pl-smi">lCtr</span>, <span class="pl-v">correlation</span><span class="pl-k">=</span> corAR1(),</td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">                <span class="pl-v">method</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&#39;</span>REML<span class="pl-pds">&#39;</span></span>,<span class="pl-v">na.action</span><span class="pl-k">=</span><span class="pl-smi">na.omit</span>)</td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>We need to check for outliers</span></td>
-      </tr>
-      <tr>
-        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line">
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">model_ldw2</span> <span class="pl-k">&lt;-</span> lme(log(<span class="pl-smi">L.DW</span>) <span class="pl-k">~</span> <span class="pl-smi">SITE</span> <span class="pl-k">+</span> <span class="pl-smi">NH4.uM.mean</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data</span>, <span class="pl-v">random</span><span class="pl-k">=</span><span class="pl-k">~</span><span class="pl-c1">1</span><span class="pl-k">|</span><span class="pl-smi">REPLICATE</span>, <span class="pl-v">control</span><span class="pl-k">=</span><span class="pl-smi">lCtr</span>, <span class="pl-v">correlation</span><span class="pl-k">=</span> corAR1(),</td>
+      </tr>
+      <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>1. leaf dry weight (L.DW)</span></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">                  <span class="pl-v">method</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&#39;</span>REML<span class="pl-pds">&#39;</span></span>,<span class="pl-v">na.action</span><span class="pl-k">=</span><span class="pl-smi">na.omit</span>)</td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">model_ldw3</span> <span class="pl-k">&lt;-</span> lme(log(<span class="pl-smi">L.DW</span>) <span class="pl-k">~</span> <span class="pl-smi">SITE</span> <span class="pl-k">+</span> <span class="pl-smi">NH4.uM.mean</span> <span class="pl-k">+</span> <span class="pl-smi">NO3.uM.mean</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data</span>, <span class="pl-v">random</span><span class="pl-k">=</span><span class="pl-k">~</span><span class="pl-c1">1</span><span class="pl-k">|</span><span class="pl-smi">REPLICATE</span>, <span class="pl-v">control</span><span class="pl-k">=</span><span class="pl-smi">lCtr</span>, <span class="pl-v">correlation</span><span class="pl-k">=</span> corAR1(),</td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to kno</span></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">                  <span class="pl-v">method</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&#39;</span>REML<span class="pl-pds">&#39;</span></span>,<span class="pl-v">na.action</span><span class="pl-k">=</span><span class="pl-smi">na.omit</span>)</td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
@@ -803,37 +805,35 @@
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">AIC(<span class="pl-smi">model_ldw1</span>, <span class="pl-smi">model_ldw2</span>, <span class="pl-smi">model_ldw3</span>)</td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Model checking plot </span></td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>2. below ground dry weight (BG.DW)</span></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">residuals</span> <span class="pl-k">&lt;-</span> resid(<span class="pl-smi">model_ldw3</span>)</td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">plot(fitted(<span class="pl-smi">model_ldw3</span>), <span class="pl-smi">residuals</span>)</td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">abline(<span class="pl-c1">0</span>,<span class="pl-c1">0</span>)</td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line">plot(fitted(<span class="pl-smi">model_ldw3</span>), log(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>)) <span class="pl-c"><span class="pl-c">#</span> this lines does not work yet</span></td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">qqnorm(<span class="pl-smi">residuals</span>)</td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">qqline(<span class="pl-smi">residuals</span>)</td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
@@ -842,170 +842,21 @@
       </tr>
       <tr>
         <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>3. Rhizome dry weight  (Ri.DW)</span></td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>2.below ground dry weight (BG.DW)----</span></td>
       </tr>
       <tr>
         <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>model1 &lt;- lme(log(L.DW) ~ SITE, data=data, random=~1|REPLICATE, control=lCtr, correlation=corAR1(form=~S.date), method=&#39;REML&#39;, na.action=na.omit)</span></td>
       </tr>
       <tr>
         <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
-      </tr>
-      <tr>
-        <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line">
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">
 </td>
-      </tr>
-      <tr>
-        <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
-      </tr>
-      <tr>
-        <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>3. Root dry weight  (Ro.DW)</span></td>
-      </tr>
-      <tr>
-        <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
-      </tr>
-      <tr>
-        <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
-      </tr>
-      <tr>
-        <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
-      </tr>
-      <tr>
-        <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
-      </tr>
-      <tr>
-        <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
-        <td id="LC42" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>3. total density   (dens.TOT)</span></td>
-      </tr>
-      <tr>
-        <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
-        <td id="LC44" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
-      </tr>
-      <tr>
-        <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
-      </tr>
-      <tr>
-        <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
-      </tr>
-      <tr>
-        <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
-        <td id="LC47" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
-        <td id="LC48" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
-      </tr>
-      <tr>
-        <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
-        <td id="LC49" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
-        <td id="LC50" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>select the variables with max nuber of observations</span></td>
-      </tr>
-      <tr>
-        <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
-        <td id="LC51" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_sep</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">data</span>[,c(<span class="pl-c1">4</span>,<span class="pl-c1">17</span>,<span class="pl-c1">11</span>,<span class="pl-c1">41</span>)]</td>
-      </tr>
-      <tr>
-        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
-        <td id="LC52" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
-        <td id="LC53" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">corrgram</span>)</td>
-      </tr>
-      <tr>
-        <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
-        <td id="LC54" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">Hmisc</span>)</td>
-      </tr>
-      <tr>
-        <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
-        <td id="LC55" class="blob-code blob-code-inner js-file-line">corrgram(<span class="pl-smi">data_sep</span>, <span class="pl-v">order</span><span class="pl-k">=</span><span class="pl-c1">TRUE</span>, <span class="pl-v">lower.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.conf</span>,</td>
-      </tr>
-      <tr>
-        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
-        <td id="LC56" class="blob-code blob-code-inner js-file-line">         <span class="pl-v">upper.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.pts</span>, <span class="pl-v">text.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.txt</span>,</td>
-      </tr>
-      <tr>
-        <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
-        <td id="LC57" class="blob-code blob-code-inner js-file-line">         <span class="pl-v">diag.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.density</span>,<span class="pl-v">pch</span><span class="pl-k">=</span><span class="pl-c1">16</span>, </td>
-      </tr>
-      <tr>
-        <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
-        <td id="LC58" class="blob-code blob-code-inner js-file-line">         <span class="pl-v">main</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>Correlograma variables FAMAR<span class="pl-pds">&quot;</span></span>)</td>
-      </tr>
-      <tr>
-        <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
-        <td id="LC59" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
-        <td id="LC60" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
-        <td id="LC61" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_sep</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">data</span>[,c(<span class="pl-c1">4</span>,<span class="pl-c1">11</span>,<span class="pl-c1">13</span>,<span class="pl-c1">15</span><span class="pl-k">:</span><span class="pl-c1">24</span>,<span class="pl-c1">26</span><span class="pl-k">:</span><span class="pl-c1">36</span>,<span class="pl-c1">39</span>)]</td>
-      </tr>
-      <tr>
-        <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
-        <td id="LC62" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
-        <td id="LC63" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">lm1</span> <span class="pl-k">&lt;-</span> lm(<span class="pl-smi">L.DW</span> <span class="pl-k">~</span> <span class="pl-smi">EzSITE.mol_m2d.q2</span> <span class="pl-k">+</span> <span class="pl-smi">SEASON</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data</span>)</td>
-      </tr>
-      <tr>
-        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
-        <td id="LC64" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">EzSITE.mol_m2d.q2</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
-      </tr>
-      <tr>
-        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
-        <td id="LC65" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
-        <td id="LC66" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_sub</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SEASON</span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>SUMMER<span class="pl-pds">&quot;</span></span>)</td>
-      </tr>
-      <tr>
-        <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
-        <td id="LC67" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">lm2</span> <span class="pl-k">&lt;-</span> lm(<span class="pl-smi">L.DW</span> <span class="pl-k">~</span> <span class="pl-smi">EzSITE.mol_m2d.q2</span> <span class="pl-k">+</span> <span class="pl-smi">SITE</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data_sub</span>)</td>
       </tr>
 </table>
 
@@ -1017,7 +868,7 @@
       <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2">
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;" data-original-text="Copy lines">Copy lines</clipboard-copy></li>
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</clipboard-copy></li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/glmm%20anlyses_step3.R">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/oscargodoy/FAMAR/issues/new">Open new issue</a></li>
       </ul>
     </details-menu>
@@ -1052,7 +903,7 @@
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.28490s from unicorn-5d9f549787-7t29s">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2018 <span title="0.19946s from unicorn-2918558901-ktr24">GitHub</span>, Inc.</li>
         <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>

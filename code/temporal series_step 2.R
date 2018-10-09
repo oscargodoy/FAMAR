@@ -27,7 +27,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>FAMAR/correlogram_step1.R at 773e00fe7df9525a7503eb824076ff9d2b20c2d8 · oscargodoy/FAMAR</title>
+  <title>FAMAR/temporal series_step 2.R at 773e00fe7df9525a7503eb824076ff9d2b20c2d8 · oscargodoy/FAMAR</title>
     <meta name="description" content="Contribute to oscargodoy/FAMAR development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -37,10 +37,10 @@
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/19736776?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="oscargodoy/FAMAR" /><meta property="og:url" content="https://github.com/oscargodoy/FAMAR" /><meta property="og:description" content="Contribute to oscargodoy/FAMAR development by creating an account on GitHub." />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzIzNzk1MjQzOjFmMTdhM2U1YzU0ZThiYTY1OTQ3MTJjZTE0YmEwMDI4YjczODQ2M2UxMDAyMGE5ODhhMGQ2MWE3N2VjMWJjYzM=--d95b5285fdf1fa033d764eba8ae93b683b5db279">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzIzNzk1MjQzOjkxNmE3ZGJiNjQ3NjAwNzQ2OWYxZjc0OGU1ODM1MjBjMGQ5Njc5ZjA4YzA0YzkwOWU4MWI2ZGVmNjU4N2ExMmY=--e0269e6a6ceac8cb5aaf00aa960f82f74a042adf">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="CFA3:6166:6A7A2EF:BD7A652:5BBC934A" data-pjax-transient>
+  <meta name="request-id" content="CFA3:6166:6A7AB2D:BD7A99B:5BBC934E" data-pjax-transient>
 
 
   
@@ -51,7 +51,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="CFA3:6166:6A7A2EF:BD7A652:5BBC934A" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="19736776" /><meta name="octolytics-actor-login" content="oscargodoy" /><meta name="octolytics-actor-hash" content="6254a33a02b436f4f946f1ee880b93c3ed7319f54cf7178dfd053063f5f94c0d" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="CFA3:6166:6A7AB2D:BD7A99B:5BBC934E" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="19736776" /><meta name="octolytics-actor-login" content="oscargodoy" /><meta name="octolytics-actor-hash" content="6254a33a02b436f4f946f1ee880b93c3ed7319f54cf7178dfd053063f5f94c0d" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -70,7 +70,7 @@
     <meta name="user-login" content="oscargodoy">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="OWNhZjM4OTU1OWU3NjkxNDBjMmFkNTVjYzYyYjc1NDQyZTJmNjk3NmVhYjdmMDc1NDUxYmNlMWYzNjMwZTEzMHx7InJlbW90ZV9hZGRyZXNzIjoiMTUwLjIxNC4xNC4xMCIsInJlcXVlc3RfaWQiOiJDRkEzOjYxNjY6NkE3QTJFRjpCRDdBNjUyOjVCQkM5MzRBIiwidGltZXN0YW1wIjoxNTM5MDg1MTM0LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+    <meta name="js-proxy-site-detection-payload" content="MGVjYzNjMzc4NjllZjM2OTIwZDU5YmVhYzY4MDQ4OTUyZjBiNWI0MzE1ZjcxYTc1NDY0YjIzNTMwZTJjYjVlMHx7InJlbW90ZV9hZGRyZXNzIjoiMTUwLjIxNC4xNC4xMCIsInJlcXVlc3RfaWQiOiJDRkEzOjYxNjY6NkE3QUIyRDpCRDdBOTlCOjVCQkM5MzRFIiwidGltZXN0YW1wIjoxNTM5MDg1MTUyLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="DASHBOARD_V2_LAYOUT_OPT_IN,EXPLORE_DISCOVER_REPOSITORIES,UNIVERSE_BANNER,MARKETPLACE_PLAN_RESTRICTION_EDITOR,MARKETPLACE_RETARGETING,COLLAPSE_REPEATED_COMMENTS">
 
@@ -86,7 +86,7 @@
   <meta name="octolytics-dimension-user_id" content="19736776" /><meta name="octolytics-dimension-user_login" content="oscargodoy" /><meta name="octolytics-dimension-repository_id" content="152045567" /><meta name="octolytics-dimension-repository_nwo" content="oscargodoy/FAMAR" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="152045567" /><meta name="octolytics-dimension-repository_network_root_nwo" content="oscargodoy/FAMAR" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="true" />
 
 
-    <link rel="canonical" href="https://github.com/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/temporal%20series_step%202.R" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -155,7 +155,7 @@
           autocapitalize="off"
           aria-autocomplete="list"
           aria-controls="jump-to-results"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=Q9mTKtSJ24BSLgMhFpXkzZYQ7FEWeTYnPRbkmISUsjzSHYzgzCj5TEK5NKriFPNseXGw340vJkYH+cCLw5KTDQ=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=8p46QXE8oWldUYgSuNk1NatYuTcwLMcSFGwVSzbJJJFjWiWLaZ2DpU3Gv5lMWCKURDnluat613MugzFYcc8FoA=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -309,7 +309,7 @@
           <li><a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a></li>
           <li><a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a></li>
           <li>
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="G/9M6KGE9iJytBpHlxrSBGHmEMK85Et10G0KKp5/HpoYJYrW16JwGOJSK6X/iB5cEqF6mDcrRJuQ3WRxz0uWRg==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="O4vKtat+uE57aQYW/6NGfyhC3eIPOMwULzpL066Kp9s4UQyL3Vg+dOuPN/SXMYonWwW3uIT3w/pviiWI/74vBw==" />
               <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
                 Sign out
               </button>
@@ -322,7 +322,7 @@
 
 
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="EhVELlp80mge4Q4ZFyugbBbeWqxICv11zVWP8GcnAH8Rz4IQLFpUUo4HP/t/uWw0ZZkw9sPF8puN5eGrNhOIow==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Yq/1uT1EcLHDBVrZE6HZyZTV5W3wY177C/MAmx3PDtthdTOHS2L2i1Pjazt7MxWR55KPN3usURVLQ27ATPuGBw==" />
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -360,7 +360,7 @@
 
       <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="s9ZHdhDvqOqXZAke+4n4OBI7mZIbI32Ro4aIR2bBHVkbt+oPbMy2LPpGxq9IPQ75enHHWlPOus2BQt/JDOOadg==" />      <input type="hidden" name="repository_id" id="repository_id" value="152045567" class="form-control" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="G1Q2mJMtP4oi9Rt+7AKImhO+Q3lPT4r/Ifc/R82zPeyzNZvh7w4hTE/X1M9ftn5be/QdsQeiTaMDM2jJp5G6ww==" />      <input type="hidden" name="repository_id" id="repository_id" value="152045567" class="form-control" />
 
       <details class="details-reset details-overlay select-menu float-left">
         <summary class="btn btn-sm btn-with-count select-menu-button" data-ga-click="Repository, click Watch settings, action:blob#show">
@@ -423,7 +423,7 @@
   <li>
     
   <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/oscargodoy/FAMAR/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/oAdg8+aVZeshh9EEUoNCHlVwJPPxOLgyaxt+oHytFczmC+2rPV4yH7ZBKPstpJMO6n+nCRVQ13YKDYz01podw==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/oscargodoy/FAMAR/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="CwcVM7ES2QlGrgAD+chNVpGuX0VxL48WUfdh722N84LGHycG0n30VpTxG+QENNIS01JhSpq+LqtAczomPyUvog==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
@@ -438,7 +438,7 @@
           0
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/oscargodoy/FAMAR/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="93fCuv3+AQS4KAAW+3D+hkIeH5EIZw2aJf5SDqioGpH5qbgXPzUrYjYSBFoOfkAthe5tbQQQ6W3DSuHkMONdPA==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/oscargodoy/FAMAR/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="NQwAoSq62hY9+L3wdqicWBF+DafXVOYHxIQ0+8rGj9o70noM6HHwcLPCubyDpiLz1o5/W9sjAvAiMIcRUo3Idw==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
@@ -537,9 +537,9 @@
     
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/oscargodoy/FAMAR/blob/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/temporal%20series_step%202.R">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:06553e8aee082bbe3428018c7ff47c43 -->
+    <!-- blob contrib key: blob_contributors:v21:259aa80d0d2dc7c1bcc5dff16f3556ba -->
 
     
 
@@ -583,7 +583,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open "
-               href="/oscargodoy/FAMAR/blob/master/code/correlogram_step1.R"
+               href="/oscargodoy/FAMAR/blob/master/code/temporal%20series_step%202.R"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -594,10 +594,10 @@
             </a>
         </div>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="select-menu-new-item-form js-new-item-form" action="/oscargodoy/FAMAR/branches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="npHcoY1dXEL/6LLZUfSelHqJyxzd/ZVosdj7Qtoq+uNZsTYnDUpjDZRTgrI+DWbTAdTITeRPE5ZP3qYZ7dn8yA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="select-menu-new-item-form js-new-item-form" action="/oscargodoy/FAMAR/branches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QrO5wHH3erPHBtUsK4ttANqCwVOCLNpGhCJdqHOljr2Fk1NG8eBF/Ky95UdEcpVHod/CArueXLh6JADzRFaIlg==" />
             <input type="hidden" name="name" id="name" class="js-new-item-value">
             <input type="hidden" name="branch" id="branch" value="773e00fe7df9525a7503eb824076ff9d2b20c2d8">
-            <input type="hidden" name="path" id="path" value="code/correlogram_step1.R">
+            <input type="hidden" name="path" id="path" value="code/temporal%20series_step%202.R">
 
             <button type="submit" class="width-full select-menu-item js-navigation-open js-navigation-item">
               <svg class="octicon octicon-git-branch select-menu-item-icon" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
@@ -634,7 +634,7 @@
         </clipboard-copy>
       </div>
       <div id="blob-path" class="breadcrumb">
-        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8"><span>FAMAR</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code"><span>code</span></a></span><span class="separator">/</span><strong class="final-path">correlogram_step1.R</strong>
+        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8"><span>FAMAR</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" rel="nofollow" href="/oscargodoy/FAMAR/tree/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code"><span>code</span></a></span><span class="separator">/</span><strong class="final-path">temporal series_step 2.R</strong>
       </div>
     </div>
 
@@ -642,15 +642,15 @@
     
   <div class="commit-tease">
       <span class="float-right">
-        <a class="commit-tease-sha" href="/oscargodoy/FAMAR/commit/b17be496de1f069c1853aa31289240b371406a9d" data-pjax>
-          b17be49
+        <a class="commit-tease-sha" href="/oscargodoy/FAMAR/commit/773e00fe7df9525a7503eb824076ff9d2b20c2d8" data-pjax>
+          773e00f
         </a>
-        <relative-time datetime="2018-10-08T11:08:52Z">Oct 8, 2018</relative-time>
+        <relative-time datetime="2018-10-09T07:29:16Z">Oct 9, 2018</relative-time>
       </span>
       <div>
         <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=19736776" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/oscargodoy"><img class="avatar" src="https://avatars3.githubusercontent.com/u/19736776?s=40&amp;v=4" width="20" height="20" alt="@oscargodoy" /></a>
         <a class="user-mention" rel="author" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=19736776" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/oscargodoy">oscargodoy</a>
-          <a data-pjax="true" title="some changes and more code to the database" class="message" href="/oscargodoy/FAMAR/commit/b17be496de1f069c1853aa31289240b371406a9d">some changes and more code to the database</a>
+          <a data-pjax="true" title="some analyses and data" class="message" href="/oscargodoy/FAMAR/commit/773e00fe7df9525a7503eb824076ff9d2b20c2d8">some analyses and data</a>
       </div>
 
     <div class="commit-tease-contributors">
@@ -689,9 +689,9 @@
   <div class="file-actions">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/raw/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/commits/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/raw/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/temporal%20series_step%202.R">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/temporal%20series_step%202.R">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/oscargodoy/FAMAR/commits/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/temporal%20series_step%202.R">History</a>
     </div>
 
         <button class="btn-octicon disabled tooltipped tooltipped-nw"
@@ -712,9 +712,9 @@
   </div>
 
   <div class="file-info">
-      68 lines (50 sloc)
+      147 lines (123 sloc)
       <span class="file-info-divider"></span>
-    1.92 KB
+    5.17 KB
   </div>
 </div>
 
@@ -724,19 +724,19 @@
       <table class="highlight tab-size js-file-line-container" data-tab-size="8">
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> first exploratory analyses FAMAR Oct 8th </span></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> analyses to start thinking in the GLMM temporal series</span></td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> do a correlogram</span></td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> the temporal scale of the autorregression. </span></td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>load the database</span></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span> <span class="pl-k">&lt;-</span> read.csv(<span class="pl-s"><span class="pl-pds">&quot;</span>data/famar-Biom_123_05_15c.csv<span class="pl-pds">&quot;</span></span>, <span class="pl-v">header</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">sep</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span> <span class="pl-k">&lt;-</span> read.csv(<span class="pl-s"><span class="pl-pds">&quot;</span>data/famar-Biom_123_05_15c.csv<span class="pl-pds">&quot;</span></span>, <span class="pl-v">header</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">sep</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)</td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span> <span class="pl-k">&lt;-</span> as.POSIXct(strptime(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-v">format</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>%d/%m/%Y<span class="pl-pds">&quot;</span></span>)) </td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
@@ -760,11 +760,12 @@
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>put the correct format</span></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span> <span class="pl-k">&lt;-</span> as.POSIXct(strptime(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-v">format</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>%d/%m/%Y<span class="pl-pds">&quot;</span></span>)) </td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">write.csv(<span class="pl-smi">data</span>, <span class="pl-v">file</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>data/famar_clean.csv<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
@@ -773,239 +774,560 @@
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>We need to check for outliers</span></td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>order by season than make biological sense</span></td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">print(levels(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SEASON</span>))</td>
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>1. leaf dry weight (L.DW)</span></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SEASON</span> <span class="pl-k">&lt;-</span> <span class="pl-k">factor</span>(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SEASON</span>, levels(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SEASON</span>)[c(<span class="pl-c1">4</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>,<span class="pl-c1">1</span>)])</td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn1</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>CN1<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to kno</span></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn2</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>CN2<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn3</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>CN3<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Can I use replicates to analyze partial correlation in temporal series?</span></td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>2. below ground dry weight (BG.DW)</span></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>If not, average to have a single value per time.</span></td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">plyr</span>)</td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>L.DW---- </span></td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn1_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn1</span>, </td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">                       c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
-        <td id="LC28" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
       </tr>
       <tr>
         <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>3. Rhizome dry weight  (Ri.DW)</span></td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">L.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">L.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
       </tr>
       <tr>
         <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn1</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>)</td>
       </tr>
       <tr>
         <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn1</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>) </td>
       </tr>
       <tr>
         <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC33" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn2_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn2</span>, </td>
       </tr>
       <tr>
         <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC34" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
       </tr>
       <tr>
         <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC35" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
       </tr>
       <tr>
         <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>3. Root dry weight  (Ro.DW)</span></td>
+        <td id="LC36" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">L.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">L.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
       </tr>
       <tr>
         <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC37" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn2</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>)</td>
       </tr>
       <tr>
         <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC38" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn2</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>) </td>
       </tr>
       <tr>
         <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
+        <td id="LC39" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC40" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn3_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn3</span>, </td>
       </tr>
       <tr>
         <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC41" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
       </tr>
       <tr>
         <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
-        <td id="LC42" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC42" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
       </tr>
       <tr>
         <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>3. total density   (dens.TOT)</span></td>
+        <td id="LC43" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">L.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">L.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
       </tr>
       <tr>
         <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
-        <td id="LC44" class="blob-code blob-code-inner js-file-line">dotchart(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC44" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn3</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>)</td>
       </tr>
       <tr>
         <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
+        <td id="LC45" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn3</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>) </td>
       </tr>
       <tr>
         <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">identify(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">S.date</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>) <span class="pl-c"><span class="pl-c">#</span>this is to know</span></td>
+        <td id="LC46" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
-        <td id="LC47" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC47" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>most likely we need an autocorrelation structure of COR AR 2 with L.DW</span></td>
       </tr>
       <tr>
         <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
-        <td id="LC48" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>This variable is ok</span></td>
+        <td id="LC48" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
-        <td id="LC49" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC49" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>BG.DW----</span></td>
       </tr>
       <tr>
         <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
-        <td id="LC50" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>select the variables with max nuber of observations</span></td>
+        <td id="LC50" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn1_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn1</span>, </td>
       </tr>
       <tr>
         <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
-        <td id="LC51" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_sep</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">data</span>[,c(<span class="pl-c1">4</span>,<span class="pl-c1">17</span>,<span class="pl-c1">11</span>,<span class="pl-c1">41</span>)]</td>
+        <td id="LC51" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
       </tr>
       <tr>
         <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
-        <td id="LC52" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC52" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
       </tr>
       <tr>
         <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
-        <td id="LC53" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">corrgram</span>)</td>
+        <td id="LC53" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">BG.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">BG.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
       </tr>
       <tr>
         <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
-        <td id="LC54" class="blob-code blob-code-inner js-file-line">library(<span class="pl-smi">Hmisc</span>)</td>
+        <td id="LC54" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn1</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>)</td>
       </tr>
       <tr>
         <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
-        <td id="LC55" class="blob-code blob-code-inner js-file-line">corrgram(<span class="pl-smi">data_sep</span>, <span class="pl-v">order</span><span class="pl-k">=</span><span class="pl-c1">TRUE</span>, <span class="pl-v">lower.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.conf</span>,</td>
+        <td id="LC55" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn1</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>) </td>
       </tr>
       <tr>
         <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
-        <td id="LC56" class="blob-code blob-code-inner js-file-line">         <span class="pl-v">upper.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.pts</span>, <span class="pl-v">text.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.txt</span>,</td>
+        <td id="LC56" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
-        <td id="LC57" class="blob-code blob-code-inner js-file-line">         <span class="pl-v">diag.panel</span><span class="pl-k">=</span><span class="pl-smi">panel.density</span>,<span class="pl-v">pch</span><span class="pl-k">=</span><span class="pl-c1">16</span>, </td>
+        <td id="LC57" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn2_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn2</span>, </td>
       </tr>
       <tr>
         <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
-        <td id="LC58" class="blob-code blob-code-inner js-file-line">         <span class="pl-v">main</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>Correlograma variables FAMAR<span class="pl-pds">&quot;</span></span>)</td>
+        <td id="LC58" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
       </tr>
       <tr>
         <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
-        <td id="LC59" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC59" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
       </tr>
       <tr>
         <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
-        <td id="LC60" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC60" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">BG.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">BG.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
       </tr>
       <tr>
         <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
-        <td id="LC61" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_sep</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">data</span>[,c(<span class="pl-c1">4</span>,<span class="pl-c1">11</span>,<span class="pl-c1">13</span>,<span class="pl-c1">15</span><span class="pl-k">:</span><span class="pl-c1">24</span>,<span class="pl-c1">26</span><span class="pl-k">:</span><span class="pl-c1">36</span>,<span class="pl-c1">39</span>)]</td>
+        <td id="LC61" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn2</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>)</td>
       </tr>
       <tr>
         <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
-        <td id="LC62" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC62" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn2</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>) </td>
       </tr>
       <tr>
         <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
-        <td id="LC63" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">lm1</span> <span class="pl-k">&lt;-</span> lm(<span class="pl-smi">L.DW</span> <span class="pl-k">~</span> <span class="pl-smi">EzSITE.mol_m2d.q2</span> <span class="pl-k">+</span> <span class="pl-smi">SEASON</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data</span>)</td>
-      </tr>
-      <tr>
-        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
-        <td id="LC64" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">EzSITE.mol_m2d.q2</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">L.DW</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SITE</span>)</td>
-      </tr>
-      <tr>
-        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
-        <td id="LC65" class="blob-code blob-code-inner js-file-line">
+        <td id="LC63" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="LC64" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn3_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn3</span>, </td>
+      </tr>
+      <tr>
+        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="LC65" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
         <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
-        <td id="LC66" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_sub</span> <span class="pl-k">&lt;-</span> subset(<span class="pl-smi">data</span>, <span class="pl-smi">data</span><span class="pl-k">$</span><span class="pl-smi">SEASON</span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>SUMMER<span class="pl-pds">&quot;</span></span>)</td>
+        <td id="LC66" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
       </tr>
       <tr>
         <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
-        <td id="LC67" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">lm2</span> <span class="pl-k">&lt;-</span> lm(<span class="pl-smi">L.DW</span> <span class="pl-k">~</span> <span class="pl-smi">EzSITE.mol_m2d.q2</span> <span class="pl-k">+</span> <span class="pl-smi">SITE</span>, <span class="pl-v">data</span><span class="pl-k">=</span><span class="pl-smi">data_sub</span>)</td>
+        <td id="LC67" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">BG.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">BG.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="LC68" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn3</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="LC69" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn3</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">BG.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="LC70" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td id="LC71" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Partial autocorrelogram suggests that either no auto temporal cor structure of if so</span></td>
+      </tr>
+      <tr>
+        <td id="L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td id="LC72" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>put the one of the previous time. </span></td>
+      </tr>
+      <tr>
+        <td id="L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td id="LC73" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L74" class="blob-num js-line-number" data-line-number="74"></td>
+        <td id="LC74" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Ri.DW----</span></td>
+      </tr>
+      <tr>
+        <td id="L75" class="blob-num js-line-number" data-line-number="75"></td>
+        <td id="LC75" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn1_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn1</span>, </td>
+      </tr>
+      <tr>
+        <td id="L76" class="blob-num js-line-number" data-line-number="76"></td>
+        <td id="LC76" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L77" class="blob-num js-line-number" data-line-number="77"></td>
+        <td id="LC77" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L78" class="blob-num js-line-number" data-line-number="78"></td>
+        <td id="LC78" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">Ri.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">Ri.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L79" class="blob-num js-line-number" data-line-number="79"></td>
+        <td id="LC79" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn1</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L80" class="blob-num js-line-number" data-line-number="80"></td>
+        <td id="LC80" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn1</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>) </td>
+      </tr>
+      <tr>
+        <td id="L81" class="blob-num js-line-number" data-line-number="81"></td>
+        <td id="LC81" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L82" class="blob-num js-line-number" data-line-number="82"></td>
+        <td id="LC82" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn2_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn2</span>, </td>
+      </tr>
+      <tr>
+        <td id="L83" class="blob-num js-line-number" data-line-number="83"></td>
+        <td id="LC83" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L84" class="blob-num js-line-number" data-line-number="84"></td>
+        <td id="LC84" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L85" class="blob-num js-line-number" data-line-number="85"></td>
+        <td id="LC85" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">Ri.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">Ri.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L86" class="blob-num js-line-number" data-line-number="86"></td>
+        <td id="LC86" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn2</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L87" class="blob-num js-line-number" data-line-number="87"></td>
+        <td id="LC87" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn2</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>) </td>
+      </tr>
+      <tr>
+        <td id="L88" class="blob-num js-line-number" data-line-number="88"></td>
+        <td id="LC88" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L89" class="blob-num js-line-number" data-line-number="89"></td>
+        <td id="LC89" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn3_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn3</span>, </td>
+      </tr>
+      <tr>
+        <td id="L90" class="blob-num js-line-number" data-line-number="90"></td>
+        <td id="LC90" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L91" class="blob-num js-line-number" data-line-number="91"></td>
+        <td id="LC91" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L92" class="blob-num js-line-number" data-line-number="92"></td>
+        <td id="LC92" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">Ri.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">Ri.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L93" class="blob-num js-line-number" data-line-number="93"></td>
+        <td id="LC93" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn3</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L94" class="blob-num js-line-number" data-line-number="94"></td>
+        <td id="LC94" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn3</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">Ri.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L95" class="blob-num js-line-number" data-line-number="95"></td>
+        <td id="LC95" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L96" class="blob-num js-line-number" data-line-number="96"></td>
+        <td id="LC96" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Partial autocorrelogram suggests that either no auto temporal cor structure of if so</span></td>
+      </tr>
+      <tr>
+        <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
+        <td id="LC97" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>put the one of the previous time. </span></td>
+      </tr>
+      <tr>
+        <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
+        <td id="LC98" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
+        <td id="LC99" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Ro.DW----</span></td>
+      </tr>
+      <tr>
+        <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
+        <td id="LC100" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn1_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn1</span>, </td>
+      </tr>
+      <tr>
+        <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
+        <td id="LC101" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
+        <td id="LC102" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
+        <td id="LC103" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">Ro.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">Ro.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
+        <td id="LC104" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn1</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
+        <td id="LC105" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn1</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>) </td>
+      </tr>
+      <tr>
+        <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
+        <td id="LC106" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
+        <td id="LC107" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn2_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn2</span>, </td>
+      </tr>
+      <tr>
+        <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
+        <td id="LC108" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
+        <td id="LC109" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
+        <td id="LC110" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">Ro.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">Ro.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
+        <td id="LC111" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn2</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
+        <td id="LC112" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn2</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>) </td>
+      </tr>
+      <tr>
+        <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
+        <td id="LC113" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
+        <td id="LC114" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn3_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn3</span>, </td>
+      </tr>
+      <tr>
+        <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
+        <td id="LC115" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
+        <td id="LC116" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
+        <td id="LC117" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">Ro.DW</span><span class="pl-k">=</span>quantile(<span class="pl-smi">Ro.DW</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
+        <td id="LC118" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn3</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
+        <td id="LC119" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn3</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">Ro.DW</span>)</td>
+      </tr>
+      <tr>
+        <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
+        <td id="LC120" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Partial autocorrelogram suggests that either no auto temporal cor structure of if so</span></td>
+      </tr>
+      <tr>
+        <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
+        <td id="LC121" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>put the one of the previous time. </span></td>
+      </tr>
+      <tr>
+        <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
+        <td id="LC122" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
+        <td id="LC123" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>dens.TOT----</span></td>
+      </tr>
+      <tr>
+        <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
+        <td id="LC124" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
+        <td id="LC125" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn1_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn1</span>, </td>
+      </tr>
+      <tr>
+        <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
+        <td id="LC126" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L127" class="blob-num js-line-number" data-line-number="127"></td>
+        <td id="LC127" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L128" class="blob-num js-line-number" data-line-number="128"></td>
+        <td id="LC128" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">dens.TOT</span><span class="pl-k">=</span>quantile(<span class="pl-smi">dens.TOT</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L129" class="blob-num js-line-number" data-line-number="129"></td>
+        <td id="LC129" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn1</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>)</td>
+      </tr>
+      <tr>
+        <td id="L130" class="blob-num js-line-number" data-line-number="130"></td>
+        <td id="LC130" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn1</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn1_ave</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>) </td>
+      </tr>
+      <tr>
+        <td id="L131" class="blob-num js-line-number" data-line-number="131"></td>
+        <td id="LC131" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L132" class="blob-num js-line-number" data-line-number="132"></td>
+        <td id="LC132" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn2_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn2</span>, </td>
+      </tr>
+      <tr>
+        <td id="L133" class="blob-num js-line-number" data-line-number="133"></td>
+        <td id="LC133" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L134" class="blob-num js-line-number" data-line-number="134"></td>
+        <td id="LC134" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L135" class="blob-num js-line-number" data-line-number="135"></td>
+        <td id="LC135" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">dens.TOT</span><span class="pl-k">=</span>quantile(<span class="pl-smi">dens.TOT</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L136" class="blob-num js-line-number" data-line-number="136"></td>
+        <td id="LC136" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn2</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>)</td>
+      </tr>
+      <tr>
+        <td id="L137" class="blob-num js-line-number" data-line-number="137"></td>
+        <td id="LC137" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn2</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn2_ave</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>) </td>
+      </tr>
+      <tr>
+        <td id="L138" class="blob-num js-line-number" data-line-number="138"></td>
+        <td id="LC138" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L139" class="blob-num js-line-number" data-line-number="139"></td>
+        <td id="LC139" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">data_cn3_ave</span> <span class="pl-k">&lt;-</span> ddply(<span class="pl-smi">data_cn3</span>, </td>
+      </tr>
+      <tr>
+        <td id="L140" class="blob-num js-line-number" data-line-number="140"></td>
+        <td id="LC140" class="blob-code blob-code-inner js-file-line">                      c(<span class="pl-s"><span class="pl-pds">&quot;</span>S.date<span class="pl-pds">&quot;</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="L141" class="blob-num js-line-number" data-line-number="141"></td>
+        <td id="LC141" class="blob-code blob-code-inner js-file-line">                      <span class="pl-smi">summarise</span>,</td>
+      </tr>
+      <tr>
+        <td id="L142" class="blob-num js-line-number" data-line-number="142"></td>
+        <td id="LC142" class="blob-code blob-code-inner js-file-line">                      <span class="pl-v">dens.TOT</span><span class="pl-k">=</span>quantile(<span class="pl-smi">dens.TOT</span>, c(<span class="pl-c1">0.5</span>), <span class="pl-v">na.rm</span><span class="pl-k">=</span><span class="pl-c1">T</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-c1">8</span>))</td>
+      </tr>
+      <tr>
+        <td id="L143" class="blob-num js-line-number" data-line-number="143"></td>
+        <td id="LC143" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">acfRes_cn3</span> <span class="pl-k">&lt;-</span> acf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>)</td>
+      </tr>
+      <tr>
+        <td id="L144" class="blob-num js-line-number" data-line-number="144"></td>
+        <td id="LC144" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">pacfRes_cn3</span> <span class="pl-k">&lt;-</span> pacf(<span class="pl-smi">data_cn3_ave</span><span class="pl-k">$</span><span class="pl-smi">dens.TOT</span>)</td>
+      </tr>
+      <tr>
+        <td id="L145" class="blob-num js-line-number" data-line-number="145"></td>
+        <td id="LC145" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>Partial autocorrelogram suggests that either no auto temporal cor structure of if so</span></td>
+      </tr>
+      <tr>
+        <td id="L146" class="blob-num js-line-number" data-line-number="146"></td>
+        <td id="LC146" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>put the one of the previous time or two times ago. </span></td>
       </tr>
 </table>
 
@@ -1017,7 +1339,7 @@
       <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2">
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;" data-original-text="Copy lines">Copy lines</clipboard-copy></li>
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</clipboard-copy></li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/correlogram_step1.R">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/oscargodoy/FAMAR/blame/773e00fe7df9525a7503eb824076ff9d2b20c2d8/code/temporal%20series_step%202.R">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/oscargodoy/FAMAR/issues/new">Open new issue</a></li>
       </ul>
     </details-menu>
@@ -1052,7 +1374,7 @@
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.28490s from unicorn-5d9f549787-7t29s">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2018 <span title="0.25257s from unicorn-5d9f549787-d8pp7">GitHub</span>, Inc.</li>
         <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
