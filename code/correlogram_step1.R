@@ -1,7 +1,7 @@
 # first exploratory analyses FAMAR Oct 8th 
 # do a correlogram
 #load the database
-data <- read.csv("data/famar-Biom_123_05_15c.csv", header=T, sep=",")
+data <- read.csv("data/famar-Biom_123_05_15.csv", header=T, sep=",")
 #we are going to limit the database to the natural growing years
 data <- subset(data, data$YEAR>2005)
 data <- subset(data, data$YEAR<2015)
