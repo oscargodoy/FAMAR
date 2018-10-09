@@ -1,11 +1,13 @@
 # first exploratory analyses FAMAR Oct 8th 
 # do a correlogram
 #load the database
-data <- read.csv("data/famar-Biom_123_05_15.csv", header=T, sep=",")
+data <- read.csv("data/famar-Biom_123_05_15d.csv", header=T, sep=",")
 #put the correct format
-data$S.date <- as.POSIXct(strptime(data$S.date, format="%d/%m/%y")) 
+data$S.date2 <- 
+data$S.date2 <- as.POSIXct(strptime(data$S.date, format="%d/%m/%Y")) 
 
 #select the variables
+data
 data_sep <- data[,c(4,11,13,15:24,26:36,39)]
 
 library(corrgram)
