@@ -21,7 +21,7 @@
 ## AG.BG.FW: AG:BG ratio. Calculated from Fresh weigth variables. Adimensional
 ## AG.BG.DW: AG:BG ratio. Calculated from Dry weight variables. Adimensional
 ## dens.TOT: Shoot density [Num.shoots m-2]
-## SDW: Shoot dry weigth (proxy for shoot size) []
+## SDW: Shoot dry weigth (proxy for shoot size) [gDW shoot-1]
 ## %N.L.DW: %N content in leaf tissues
 ## d15N.L.DW: d15N in leaf tissues
 ## %C.L.DW: %C content in leaf tissues
