@@ -120,3 +120,26 @@ plot(model_densTOT1)
 qqnorm(model_densTOT1, ~ranef(., level=1))
 qqnorm(residuals)
 qqline(residuals)
+
+
+##Final analyses ----
+
+#load the data and start with the analyses
+library(reshape2)
+library(nlme)
+
+#data <- read.csv("data/famar-Biom_123_05_15_nut.c.csv", header=T, sep=",")
+data <- read.csv("data/FAMAR_punching123_05_15_nut.c.csv", header=T, sep=",")
+data <- subset(data, data$YEAR>2005)
+data <- subset(data, data$YEAR<2015)
+table(data$YEAR)
+table(data$SITE)
+#put the correct format
+data$S.date <- as.POSIXct(strptime(data$S.date, format="%d/%m/%Y")) 
+
+lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 250, msMaxEval = 200)
+
+model_ldw3 <- lme(log(L.DW) ~ SITE + NH4.uM.q2 + NO3.uM.q2 + PO4.uM.q2, data=data, random=~1|PLOT, control=lCtr, correlation= corARMA(p=2, q=3),
+                  weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
+# This last model is the one that work best 
+AIC(model_ldw1, model_ldw2, model_ldw3)
