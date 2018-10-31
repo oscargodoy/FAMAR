@@ -139,7 +139,7 @@ bio$S.date <- as.POSIXct(strptime(bio$S.date, format="%d/%m/%Y"))
 lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 250, msMaxEval = 200)
 
 #5.1 LDW----
-model_ldw1 <- lme(log(L.DW) ~ ELEVATION + NH4.uM.mean + NO3.uM.mean, data=bio, random=~1|R.replicates/SITE, control=lCtr, correlation= corARMA(p=2, q=2),
+model_ldw <- lme(log(L.DW) ~ ELEVATION + NH4.uM.mean + NO3.uM.mean, data=bio, random=~1|R.replicates/SITE, control=lCtr, correlation= corARMA(p=2, q=2),
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
 # This last model is the one that work best 
 summary(model_ldw)
