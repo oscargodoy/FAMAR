@@ -1,26 +1,29 @@
-#do some graphic representation of the main models. 
+##Final analyses ----
+
 #load the data and start with the analyses
 library(reshape2)
 library(nlme)
-library(ggplot2)
-library(effects)
+library(visreg)
 
-data <- read.csv("data/famar-Biom_123_05_15.csv", header=T, sep=",")
-data <- subset(data, data$YEAR>2005)
-data <- subset(data, data$YEAR<2015)
-table(data$YEAR)
-table(data$SITE)
+bio <- read.csv("data/famar-Biom_123_05_15_minVAR.csv", header=T, sep=",")
+bio <- subset(bio, bio$YEAR>2005)
+bio <- subset(bio, bio$YEAR<2015)
+table(bio$YEAR)
+table(bio$SITE)
 #put the correct format
-data$S.date <- as.POSIXct(strptime(data$S.date, format="%d/%m/%Y")) 
+bio$S.date <- as.POSIXct(strptime(bio$S.date, format="%d/%m/%Y")) 
 
-#create a new variable to assign a specific plot
-data$PLOT <- paste(data$SITE, data$R.replicates, sep="_") 
+lCtr <- lmeControl(maxIter = 5000, msMaxIter = 5000, tolerance = 1e-8, niterEM = 2500, msMaxEval = 2000)
 
-lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 250, msMaxEval = 200)
-
-model_ldw <- lme(log(L.DW) ~ SITE*NH4.uM.q2 + NO3.uM.q2 + PO4.uM.q2, data=data, random=~1|PLOT, control=lCtr, correlation= corARMA(p=2, q=3),
-                  weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
+#Example with LDW
+model_ldw <- lme(log(L.DW) ~ SITE*NH4.uM.mean + NO3.uM.mean, data=bio, random=~1|R.replicates/SITE, control=lCtr, correlation= corARMA(p=2, q=2),
+                 weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
 summary(model_ldw)
+visreg(model_ldw, "NH4.uM.mean", by="SITE", gg=TRUE, xlab="NH4 concentration (uM)", 
+       ylab="Leaf dry weight (g) log transformed", layout=c(3,1), fill.par=list(col="#008DFF33"))
+
+
+#####ESTO ES SOLO PARA RECUPERAR SI ACASO. 
 
 #Obtained fitted data 
 fit_model_ldw <- effect(term="SITE*NH4.uM.q2", 
@@ -55,4 +58,5 @@ n_dat <- expand.grid(SITE=unique(data$SITE),
   theme_bw(base_size=22) 
 print(p)
 
+##Eje y representar ldw, eje x nutrientes, y cada sitio con sus puntos, linea media y barras de error.
 

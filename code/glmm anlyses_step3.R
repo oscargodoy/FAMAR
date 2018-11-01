@@ -136,13 +136,16 @@ table(bio$SITE)
 #put the correct format
 bio$S.date <- as.POSIXct(strptime(bio$S.date, format="%d/%m/%Y")) 
 
-lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 250, msMaxEval = 200)
+lCtr <- lmeControl(maxIter = 5000, msMaxIter = 5000, tolerance = 1e-8, niterEM = 2500, msMaxEval = 2000)
 
 #5.1 LDW----
-model_ldw <- lme(log(L.DW) ~ ELEVATION + NH4.uM.mean + NO3.uM.mean, data=bio, random=~1|R.replicates/SITE, control=lCtr, correlation= corARMA(p=2, q=2),
+model_ldw <- lme(log(L.DW) ~ SITE*YEAR*NH4.uM.mean + NO3.uM.mean, data=bio, random=~1|R.replicates/SITE, control=lCtr, correlation= corARMA(p=2, q=2),
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
+# NOTE: SEASON NEEDS to be in the following order WINTER, SPRING, SUMMER, FALL. 
 # This last model is the one that work best 
 summary(model_ldw)
+anova(model_ldw)
+####ES MUY IMPORTANTE VER LA RELACION ENTRE SITIO Y A˜NO Y LUEGO LO SUYO CON NUTRIENTES.
 
 #Model checking plot 
 residuals <- resid(model_ldw)
