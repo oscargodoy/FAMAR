@@ -1,8 +1,11 @@
 #load the data and start with the analyses
 library(reshape2)
 library(nlme)
+library(ggplot2)
+library(grid)
+library(gridExtra)
 
-data <- read.csv("data/famar-Biom_123_05_15.csv", header=T, sep=",")
+data <- read.csv("data/famar-Biom_123_05_15_minVAR.csv", header=T, sep=",")
 data <- subset(data, data$YEAR>2005)
 data <- subset(data, data$YEAR<2015)
 table(data$YEAR)
@@ -13,25 +16,33 @@ data$S.date <- as.POSIXct(strptime(data$S.date, format="%d/%m/%Y"))
 #create a new variable to assign a specific plot
 data$PLOT <- paste(data$SITE, data$R.replicates, sep="_") 
 
+data$fELEVATION <- as.factor(data$ELEVATION) 
+
 #We are going to establish a linear relationship between biomass
 #production and the predictors by doing a log of biomass
 #here are some parameters to help the models converge
 lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 250, msMaxEval = 200)
 
 #1.leaf dry weight (L.DW)----
-model_ldw1 <- lme(log(L.DW) ~ SITE, data=data, random=~1|PLOT, control=lCtr, correlation= corARMA(p=2, q=3), 
+model_ldw1 <- lme(log(L.DW) ~ fELEVATION, data=data, random=~1|R.replicates, control=lCtr, correlation= corARMA(p=2, q=3), 
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit)
 #According to AIC an autocorrelation structure with CorARMA (p=2, q=3) is the best (lowest AIC)
 #Now I am adding another potential predictors. 
-model_ldw2 <- lme(log(L.DW) ~ SITE + NH4.uM.mean, data=data, random=~1|PLOT, control=lCtr, correlation= corARMA(p=2, q=3),
+model_ldw2.2 <- lme(log(L.DW) ~ fELEVATION + NH4.uM.mean, data=data, random=~1|R.replicates, control=lCtr, correlation= corARMA(p=2, q=3),
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit)
 
-model_ldw3 <- lme(log(L.DW) ~ SITE + NH4.uM.q2 + NO3.uM.q2 + PO4.uM.q2, data=data, random=~1|PLOT, control=lCtr, correlation= corARMA(p=2, q=3),
+model_ldw3 <- lme(log(L.DW) ~ fELEVATION + NO3.uM.mean + PO4.uM.mean, data=data, random=~1|R.replicates, control=lCtr, correlation= corARMA(p=2, q=3),
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
 # This last model is the one that work best 
-AIC(model_ldw1, model_ldw2, model_ldw3)
+AIC(model_ldw1, model_ldw2, model_ldw3, model_ldw4, model_ldw5)
 
 summary(model_ldw3)
+
+#plot some of the data according to the best fitted model
+
+
+
+
 
 #Model checking plot 
 residuals <- resid(model_ldw3)
