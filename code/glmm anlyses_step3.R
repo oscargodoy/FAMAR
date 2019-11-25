@@ -4,8 +4,10 @@ library(nlme)
 library(ggplot2)
 library(grid)
 library(gridExtra)
+library(MASS)
+library(DHARMa)
 
-data <- read.csv("data/famar-Biom_123_05_15_minVAR.csv", header=T, sep=",")
+data <- read.csv("data/famar-Biom_123_05_15_nut.c.csv", header=T, sep=",")
 data <- subset(data, data$YEAR>2005)
 data <- subset(data, data$YEAR<2015)
 table(data$YEAR)
@@ -28,19 +30,37 @@ model_ldw1 <- lme(log(L.DW) ~ fELEVATION, data=data, random=~1|R.replicates, con
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit)
 #According to AIC an autocorrelation structure with CorARMA (p=2, q=3) is the best (lowest AIC)
 #Now I am adding another potential predictors. 
-model_ldw2.2 <- lme(log(L.DW) ~ fELEVATION + NH4.uM.mean, data=data, random=~1|R.replicates, control=lCtr, correlation= corARMA(p=2, q=3),
+model_ldw2 <- lme(log(L.DW) ~ fELEVATION + NH4.uM.q2, data=data, random=~1|R.replicates, control=lCtr, correlation= corARMA(p=2, q=3),
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit)
 
-model_ldw3 <- lme(log(L.DW) ~ fELEVATION + NO3.uM.mean + PO4.uM.mean, data=data, random=~1|R.replicates, control=lCtr, correlation= corARMA(p=2, q=3),
+model_ldw3 <- lme(log(L.DW) ~ YEAR*fELEVATION + EzSITE.mol_m2d.q2 + NO3.uM.q2 + NH4.uM.q2, data=data, random=~1|R.replicates/ELEVATION, control=lCtr, correlation= corARMA(p=2, q=2),
+                  weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
+
+
+model_ldw4 <- lm(log(L.DW) ~ YEAR*fELEVATION + EzSITE.mol_m2d.q2 + NO3.uM.q2 + NH4.uM.q2, data=data,na.action=na.omit) 
+
+model_ldw5 <- lme(log(BG.DW) ~ YEAR*fELEVATION + EzSITE.mol_m2d.q2 + NO3.uM.q2, data=data, random=~1|R.replicates/ELEVATION, control=lCtr, correlation= corARMA(p=1, q=2),
                   weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
 # This last model is the one that work best 
-AIC(model_ldw1, model_ldw2, model_ldw3, model_ldw4, model_ldw5)
+AIC(model_ldw1, model_ldw2, model_ldw3, model_ldw4)
 
-summary(model_ldw3)
+summary(model_ldw5)
+plot(model_ldw3) # check that residuals are ok 
+
 
 #plot some of the data according to the best fitted model
 
+#we are going to plot ldw as a function of nitrogen of the three elevations. 
 
+p1<-ggplot(data, aes(x = YEAR, y = NH4.uM.q2, color = fELEVATION) ) +
+  geom_point() +
+  geom_smooth(method = "lm", alpha = .15, aes(fill = fELEVATION))
+
+p2<-ggplot(data, aes(x = YEAR, y = log(L.DW), color = fELEVATION) ) +
+  geom_point() +
+  geom_smooth(method = "lm", alpha = .15, aes(fill = fELEVATION))
+
+grid.arrange(p1,p2, ncol=2)
 
 
 
@@ -114,11 +134,15 @@ qqnorm(residuals)
 qqline(residuals)
 
 #5.total density (dens.TOT)----
-model_densTOT1 <- lme(log(dens.TOT) ~ SITE + NH4.uM.q2 + NO2.uM.q2 + NO3.uM.q2, data=data2, random=~1|PLOT, control=lCtr, correlation= corARMA(p=2, q=2),
+model_densTOT1 <- lme(log(dens.TOT) ~ YEAR*fELEVATION + NO3.uM.q2, data=data, random=~1|R.replicates/fELEVATION, control=lCtr, correlation= corARMA(p=2, q=2),
                    weights = varIdent(form= ~ 1 | YEAR), method='ML',na.action=na.omit)
 #sometimes is better to modelate the weights of year rather than the season to control for heterocedasticity
 AIC(model_densTOT1)
 summary(model_densTOT1)
+
+ggplot(data, aes(x = YEAR, y = dens.TOT, color = fELEVATION) ) +
+  geom_point() +
+  geom_smooth(method = "lm", alpha = .15, aes(fill = fELEVATION))
 
 #Model checking plot 
 residuals <- resid(model_densTOT1)
@@ -233,7 +257,7 @@ qqline(residuals)
 #load the data and start with the analyses
 library(reshape2)
 library(nlme)
-punch <- read.csv("data/FAMAR_punching123_05_15_minVAR.csv", header=T, sep=",")
+punch <- read.csv("data/FAMAR_punching123_05_15_nut.c.csv", header=T, sep=",")
 punch <- subset(punch, punch$YEAR>2005)
 punch <- subset(punch, punch$YEAR<2015)
 table(punch$YEAR)
@@ -247,8 +271,15 @@ lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 2
 model_lgr <- lme(log(LGR) ~ YEAR + ELEVATION.m * NO2.uM.mean, data=punch, random=~1|R.replicate/SITE, control=lCtr, correlation= corARMA(p=0, q=2),
                  weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
 
+punch$fELEVATION <- as.factor(punch$ELEVATION.m)
+
 # This last model is the one that work best 
 summary(model_lgr)
+
+
+ggplot(punch, aes(x = YEAR, y = log(LGR), color = fELEVATION) ) +
+  geom_point() +
+  geom_smooth(method = "lm", alpha = .15, aes(fill = fELEVATION))
 
 #Model checking plot 
 residuals <- resid(model_lgr)
@@ -262,13 +293,28 @@ qqnorm(model_lgr, ~ranef(., level=1))
 qqnorm(residuals)
 qqline(residuals)
 
+
+
+
+
+
+
 #6.2 LLRW----
 #Log of 0 is equal to -INF so we need to put a value over zero for these cases
 punch$LLRw[punch$LLRw == 0] <- 0.01
-model_llrw <- lme(log(LLRw) ~  YEAR + ELEVATION.m * NO2.uM.mean + NO3.uM.mean + PO4.uM.mean, data=punch, random=~1|R.replicate/SITE, control=lCtr, correlation= corARMA(p=0, q=2),
+model_llrw <- lme(log(LLRw) ~  YEAR*ELEVATION.m, data=punch, random=~1|R.replicate/SITE, control=lCtr, correlation= corARMA(p=0, q=2),
                  weights = varIdent(form= ~ 1 | SEASON), method='ML',na.action=na.omit) 
 
+
+
 summary(model_llrw)
+
+
+ggplot(punch, aes(x = YEAR, y = log(LLRw), color = fELEVATION) ) +
+  geom_point() +
+  geom_smooth(method = "lm", alpha = .15, aes(fill = fELEVATION))
+
+
 
 #Model checking plot 
 residuals <- resid(model_llrw)
