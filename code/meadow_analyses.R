@@ -24,7 +24,20 @@ data$fELEVATION <- as.factor(data$fELEVATION)
 lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 250, msMaxEval = 200)
 
 #1.Gross.Prod.q2----
-model_gp1 <- lme(Gross.Prod.q2 ~ YEAR, data=data, control=lCtr, random = ~ 1|R.replicates, correlation= corARMA(p=0, q=1), 
+model_gp <- lme(Gross.Prod.q2 ~ YEAR, data=data, control=lCtr, random = ~ 1|fELEVATION, correlation= corARMA(p=0, q=1), 
                    method='ML')
 
-Model does not work because I need replication, does not work with the means. !!
+summary(model_gp)
+
+#2.Loss.q2----
+model_l <- lme(Loss.q2 ~ YEAR, data=data, control=lCtr, random = ~ 1|fELEVATION, correlation= corARMA(p=0, q=1), 
+                method='ML')
+
+summary(model_l)
+
+#3.Loss.q2----
+model_netp <- lme(netP.q2 ~ YEAR, data=data, control=lCtr, random = ~ 1|fELEVATION, correlation= corARMA(p=0, q=1), 
+               method='ML')
+
+summary(model_netp)
+
