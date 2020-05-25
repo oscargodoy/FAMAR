@@ -5,6 +5,7 @@ library(nlme)
 library(ggplot2)
 library(MuMIn)
 library(multcomp)
+library(emmeans)
 library(sjPlot)
 library(sjmisc)
 
@@ -52,7 +53,7 @@ fmList <- get.models(ms2, 1:4)
 summary(model.avg(fmList))
 
 #Best model 
-model_ldw_best <- lme(log(L.DW) ~ SITE + SST.C + 1, data = data2, 
+model_ldw_best <- lme(log(L.DW) ~ SITE + SST.C + SITE*SST.C + 1, data = data2, 
                       random = ~1 | PLOT, correlation = corARMA(p = 2, q = 2), 
                       weights = varIdent(form = ~1 | SEASON), method = "REML", 
                       control = lCtr)
@@ -67,17 +68,18 @@ lines(Range, Norm, col = "blue", lwd = 2)
 
 plot(model_ldw_best)
 plot(model_ldw_best, resid(., type = "p") ~ fitted(.) | SITE, abline = 0)
-plot(model_ldw_best, Subject ~ resid(.))
+plot(model_ldw_best,  SST.C ~ resid(.))
 qqnorm(model_ldw_best, ~ranef(., level=1))
 qqnorm(residuals)
 qqline(residuals)
 
 #Perform tukey test 
 summary(glht(model_ldw_best, linfct = mcp(SITE = "Tukey")))
+lsmeans(model_ldw_best, list(pairwise ~ SITE*SST.C), adjust = "tukey") #tukey for an interaction
 # all the SITES CN1, CN2, and CN3 are differet.
 
 #plot the main results.
-plot_model(model_ldw_best, type = "pred", terms = c("SST.C[50,57,69]", "SITE"))
+plot_model(model_ldw_best, type = "pred", terms = c("SST.C[50, 52, 54, 56, 58, 64, 66, 69]", "SITE"))
 #Values of SST.C, corresponds to 1quartile, median, and third quartile. 
 
 # BG.DW: Belowground (raices y rizomas)----
@@ -444,7 +446,7 @@ plot_model(model_pi_best, type = "pred", terms = c("YEAR", "SITE"))
 #Values of SST.C, corresponds to 1quartile, median, and third quartile. 
 #PI fit does not work
 
-# 3. Dynamic variables at the prairie level ####
+# 3. Dynamic variables at the prairie level ----
 
 # rm(list = ls())
 
@@ -461,17 +463,17 @@ lCtr <- lmeControl(maxIter = 500, msMaxIter = 500, tolerance = 1e-6, niterEM = 2
 
 # PROD.S (gDW.m2.season). Producción 'bruta' ----
 #We first model the random part 
-model_prods1 <- lme(log(Prod.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=1, q=1),
-                 weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_prods1 <- lme(log(Prod.S) ~ 1, data=data2, control=lCtr, random = ~1|SEASON, correlation=corARMA(p=1, q=1),
+                     method='ML',na.action=na.omit)
 
-model_prods2 <- lme(log(Prod.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=1, q=2),
-                 weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_prods2 <- lme(log(Prod.S) ~ 1, data=data2, control=lCtr, random=~1|SEASON, correlation= corARMA(p=1, q=2),
+                    method='REML',na.action=na.omit)
 
-model_prods3 <- lme(log(Prod.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=2),
-                 weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_prods3 <- lme(log(Prod.S) ~ 1, data=data2, control=lCtr, random=~1|SEASON, correlation= corARMA(p=2, q=2),
+                    method='REML',na.action=na.omit)
 
-model_prods4 <- lme(log(Prod.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=1),
-                 weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_prods4 <- lme(log(Prod.S) ~ 1, data=data2, control=lCtr, random=~1|SEASON, correlation= corARMA(p=2, q=1),
+                    method='REML',na.action=na.omit)
 
 AIC(model_prods1, model_prods2, model_prods3, model_prods4)
 #model 3 perform best 
@@ -479,17 +481,17 @@ AIC(model_prods1, model_prods2, model_prods3, model_prods4)
 #We then model the fixed part 
 options(na.action = "na.fail")
 
-model_prods <- lme(log(Prod.S) ~ SITE*YEAR*SST.C, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=2),
-                weights = varIdent(form= ~ 1 | SEASON), method='REML')
+model_prods <- lme(log(Prod.S) ~ SITE*YEAR*SST.C, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=2, q=2),
+                   method='REML')
 ms2 <- dredge(model_prods, trace = TRUE, rank = "AICc", REML = FALSE)
 (attr(ms2, "rank.call"))
 fmList <- get.models(ms2, 1:4)
 summary(model.avg(fmList))
 
 #Best model 
-model_prods_best <- lme(log(Prod.S) ~ SITE + SST.C + YEAR + SITE*SST.C + SITE*YEAR + SST.C*YEAR  + 1, 
-                     data = data2, random = ~1 | SITE, correlation = corARMA(p = 2, q = 2), 
-                     weights = varIdent(form = ~1 | SEASON), method = "REML", 
+model_prods_best <- lme(log(Prod.S) ~ SITE + SST.C + YEAR + 1, 
+                     data = data2, random = ~1 | YEAR,  correlation= corARMA(p=2, q=2),
+                     method = "REML", 
                      control = lCtr)
 summary(model_prods_best)
 
@@ -509,45 +511,45 @@ qqline(residuals)
 
 #Perform tukey test 
 summary(glht(model_prods_best, linfct = mcp(SITE = "Tukey"))) #tukey for a single factor
-lsmeans(model_prods_best, list(pairwise ~ SITE*YEAR), adjust = "tukey") #tukey for an interaction
-lsmeans(model_prods_best, list(pairwise ~ SITE*SST.C), adjust = "tukey") #tukey for an interaction
+#lsmeans(model_prods_best, list(pairwise ~ SST.C*SITE), adjust = "tukey") #tukey for an interaction
+#lsmeans(model_prods_best, list(pairwise ~ YEAR*SITE), adjust = "tukey") #tukey for an interaction
 
 #plot the main results.
-plot_model(model_prods_best, type = "pred", terms = c("YEAR", "SITE"))
-plot_model(model_prods_best, type = "pred", terms = c("SST.C[50,57,69]", "SITE"))
+plot_model(model_prods_best, type = "pred", terms = c("SITE"))
+plot_model(model_prods_best, type = "pred", terms = c("SST.C[50,57,69]"))
 
 
 # LOSS.S (gDW.m2.season). Perdidas ----
 #We first model the random part 
-model_losss1 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=1, q=1),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_losss1 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=1, q=1),
+                    method='REML',na.action=na.omit)
 
-model_losss2 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=1, q=2),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_losss2 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=1, q=2),
+                    method='REML',na.action=na.omit)
 
-model_losss3 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=2),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_losss3 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=2, q=2),
+                   method='REML',na.action=na.omit)
 
-model_losss4 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=3),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_losss4 <- lme(log(Loss.S) ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=2, q=3),
+                    method='REML',na.action=na.omit)
 
-AIC(model_losss1, model_losss2, model_losss3)
-#model 3 perform best 
+AIC(model_losss1, model_losss2, model_losss4)
+#model 1 perform best 
 
 #We then model the fixed part 
 options(na.action = "na.fail")
 
-model_losss <- lme(log(Loss.S) ~ SITE*YEAR*SST.C, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=2),
-                   weights = varIdent(form= ~ 1 | SEASON), method='REML')
+model_losss <- lme(log(Loss.S) ~ SITE*YEAR*SST.C, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=1, q=1),
+                   method='REML')
 ms2 <- dredge(model_losss, trace = TRUE, rank = "AICc", REML = FALSE)
 (attr(ms2, "rank.call"))
 fmList <- get.models(ms2, 1:4)
 summary(model.avg(fmList))
 
 #Best model 
-model_losss_best <- lme(log(Loss.S) ~  SST.C + YEAR + SST.C*YEAR  + 1, 
-                        data = data2, random = ~1 | SITE, correlation = corARMA(p = 2, q = 2), 
-                        weights = varIdent(form = ~1 | SEASON), method = "REML", 
+model_losss_best <- lme(log(Loss.S) ~  SITE + SST.C + YEAR + SST.C*YEAR  + 1, 
+                        data = data2, random = ~1 | SEASON, correlation = corARMA(p = 1, q = 1), 
+                        method = "REML", 
                         control = lCtr)
 summary(model_losss_best)
 
@@ -566,44 +568,46 @@ qqnorm(residuals)
 qqline(residuals)
 
 #Perform tukey test 
+summary(glht(model_prods_best, linfct = mcp(SITE = "Tukey")))
 lsmeans(model_losss_best, list(pairwise ~ SST.C*YEAR), adjust = "tukey") #tukey for an interaction
+####MIRAR EN DETALLE OMO SACAR TUKEY ENTRE DOS VARIABLES CONTINUAS OSCAR
 
 #plot the main results.
+
 plot_model(model_losss_best, type = "pred", terms = c("YEAR", "SITE"))
-plot_model(model_losss_best, type = "pred", terms = c("YEAR","SST.C[50,57,69]"))
 
 # NET.S (gDW.m2.season). Producción 'neta' ----
 
 #We first model the random part 
-model_nets1 <- lme(Net.S ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=1, q=1),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_nets1 <- lme(Net.S ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=1, q=1),
+                    method='REML',na.action=na.omit)
 
-model_nets2 <- lme(Net.S ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=1, q=2),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_nets2 <- lme(Net.S ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=1, q=2),
+                    method='REML',na.action=na.omit)
 
-model_nets3 <- lme(Net.S ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=2),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_nets3 <- lme(Net.S ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=2, q=2),
+                    method='REML',na.action=na.omit)
 
-model_nets4 <- lme(Net.S ~ 1, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=3),
-                    weights = varIdent(form= ~ 1 | SEASON), method='REML',na.action=na.omit)
+model_nets4 <- lme(Net.S ~ 1, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=2, q=3),
+                    method='REML',na.action=na.omit)
 
-AIC(model_nets1, model_nets2, model_nets3)
+AIC(model_nets1, model_nets2)
 #model 3 perform best 
 
 #We then model the fixed part 
 options(na.action = "na.fail")
 
-model_nets <- lme(Net.S ~ SITE*YEAR*SST.C, data=data2, random=~1|SITE, control=lCtr, correlation= corARMA(p=2, q=2),
-                   weights = varIdent(form= ~ 1 | SEASON), method='REML')
+model_nets <- lme(Net.S ~ SITE*YEAR*SST.C, data=data2, random=~1|SEASON, control=lCtr, correlation= corARMA(p=1, q=1),
+                  method='REML')
 ms2 <- dredge(model_nets, trace = TRUE, rank = "AICc", REML = FALSE)
 (attr(ms2, "rank.call"))
 fmList <- get.models(ms2, 1:4)
 summary(model.avg(fmList))
 
 #Best model 
-model_nets_best <- lme(Net.S ~  SST.C + 1, 
-                        data = data2, random = ~1 | SITE, correlation = corARMA(p = 2, q = 2), 
-                        weights = varIdent(form = ~1 | SEASON), method = "REML", 
+model_nets_best <- lme(Net.S ~  SITE + SST.C + YEAR + SITE*SST.C + SST.C*YEAR + 1, 
+                        data = data2, random = ~1 | SEASON, correlation = corARMA(p = 1, q = 1), 
+                         method = "REML", 
                         control = lCtr)
 summary(model_nets_best)
 
@@ -622,9 +626,14 @@ qqnorm(residuals)
 qqline(residuals)
 
 #Perform tukey test 
-#no fixed factor selected 
+summary(glht(model_nets_best, linfct = mcp(SITE = "Tukey")))
+lsmeans(model_nets_best, list(pairwise ~ SST.C*SITE), adjust = "tukey") #tukey for an interaction
+####
+
 #plot the main results.
-plot_model(model_nets_best, type = "pred", terms = "SST.C")
+plot_model(model_nets_best, type = "pred", terms = c("SITE", "SST.C[50,57,69]"))
+plot_model(model_nets_best, type = "pred", terms = c("YEAR", "SITE"))
+
 
 
 
